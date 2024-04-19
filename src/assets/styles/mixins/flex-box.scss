@@ -1,0 +1,67 @@
+$align-map: (
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "between": space-between,
+  "around": space-around,
+);
+
+@function align-base($value) {
+  @return map-get($align-map, $value);
+}
+
+@mixin flex-box-args($args) {
+  @if $args != null {
+    // ====== flex-direction ====== //
+    @each $direction in row row-reverse column column-reverse {
+      $direction-index: index($args, $direction);
+
+      @if $direction-index {
+        flex-direction: nth($args, $direction-index);
+      }
+    }
+
+    // ====== flex-wrap ====== //
+    @each $wrap in nowrap wrap wrap-reverse {
+      $wrap-index: index($args, $wrap);
+
+      @if $wrap-index {
+        flex-wrap: nth($args, $wrap-index);
+      }
+    }
+
+    // ====== justify-content ====== //
+    @each $justifyContent
+      in justify-start
+      justify-center
+      justify-end
+      justify-between
+      justify-around
+    {
+      $justifyContent-index: index($args, $justifyContent);
+
+      @if $justifyContent-index {
+        $justifyContent-value: str-replace(
+          nth($args, $justifyContent-index),
+          "justify-"
+        );
+        justify-content: align-base($justifyContent-value);
+      }
+    }
+
+    // ====== align-items ====== //
+    @each $alignItems in items-start items-end items-center {
+      $alignItems-index: index($args, $alignItems);
+
+      @if $alignItems-index {
+        $alignItems-value: str-replace(nth($args, $alignItems-index), "items-");
+        align-items: align-base($alignItems-value);
+      }
+    }
+  }
+}
+
+@mixin flex-box($args, $mode: flex) {
+  display: if($mode == flex, flex, inline-flex);
+  @include flex-box-args($args);
+}

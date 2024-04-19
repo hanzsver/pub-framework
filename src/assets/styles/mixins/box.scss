@@ -1,0 +1,20 @@
+@mixin size-args($min-w: null, $min-h: null, $max-w: null, $max-h: null) {
+  min-width: $min-w;
+  max-width: $max-w;
+  min-height: $min-h;
+  max-height: $max-h;
+}
+
+@mixin size(
+  $width,
+  $height: $width,
+  $min-w: null,
+  $min-h: null,
+  $max-w: null,
+  $max-h: null
+) {
+  width: $width;
+  height: $height;
+
+  @include size-args($min-w, $min-h, $max-w, $max-h);
+}
