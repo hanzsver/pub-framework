@@ -1,0 +1,15 @@
+$breakpoint-mobile: map-get($media-query-map, mobile);
+$breakpoint-tablet: map-get($media-query-map, tablet);
+$breakpoint-desktop: map-get($media-query-map, desktop);
+
+@mixin mobile {
+  @media all and (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media all and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}

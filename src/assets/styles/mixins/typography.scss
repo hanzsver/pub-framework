@@ -1,0 +1,15 @@
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin typo(
+  $size: var(--font-size-16),
+  $weight: 400,
+  $color: var(--color-gray-900)
+) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
