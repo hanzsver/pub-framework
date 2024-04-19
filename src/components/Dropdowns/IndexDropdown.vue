@@ -1,13 +1,13 @@
 <template>
   <div>
-    <a
-      class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-      href="#pablo"
+    <button
+          class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none"
+          type="button"
       ref="btnDropdownRef"
-      v-on:click="toggleDropdown($event)"
-    >
-      Demo Pages
-    </a>
+          v-on:click="toggleDropdown($event)"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
     <div
       ref="popoverDropdownRef"
       class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
