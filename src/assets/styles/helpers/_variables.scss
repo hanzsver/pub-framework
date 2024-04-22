@@ -1,1 +1,78 @@
-// variables styles
+/* ===== Variables Map ===== */
+/* Font Size */
+$font-size-map: (
+  38: 38px,
+  22: 22px,
+  20: 20px,
+  18: 18px,
+  16: 16px,
+  15: 15px,
+  14: 14px,
+  12: 12px,
+  10: 10px,
+);
+
+/* Media Query */
+$media-query-map: (
+  mobile: 480px,
+  tablet: 768px,
+  desktop: 1280px,
+);
+
+/* ===== Variables ===== */
+:root {
+  /* Layout */
+  --layout-min-width: 320px;
+  --layout-header-height: 56px;
+
+  /* Media Query */
+  @each $key, $value in $media-query-map {
+    --breakpoint-#{$key}: #{$value};
+  }
+
+  /* Color */
+  // gray scale
+  --color-gray-900: #000000;
+  --color-gray-800: #262626;
+  --color-gray-700: #434343;
+  --color-gray-600: #555555;
+  --color-gray-500: #8e8e8e;
+  --color-gray-400: #b9b9b9;
+  --color-gray-300: #cfcfcf;
+  --color-gray-200: #ebebeb;
+  --color-gray-100: #f3f3f3;
+  --color-gray-50: #ffffff;
+
+  /* Darkmode */
+  .dark {
+    // gray scale
+    --color-gray-900: #fffdfd;
+    --color-gray-800: #f3f3f3;
+    --color-gray-700: #fffdfd;
+    --color-gray-600: #cfcfcf;
+    --color-gray-500: #8e8e8e;
+    --color-gray-400: #555555;
+    --color-gray-300: #363636;
+    --color-gray-200: #434343;
+    --color-gray-100: #181818;
+    --color-gray-50: #28292d;
+  }
+
+  /* Font Size */
+  @each $key, $value in $font-size-map {
+    --font-size-#{$key}: #{$value};
+  }
+
+  /* Border Radius */
+  --radius--full: 100%;
+  --radius--xl: 100px;
+  --radius--lg: 20px;
+  --radius--md: 10px;
+  --radius--sm: 8px;
+  --radius--xs: 4px;
+
+  /* etc */
+  --transition: all 150ms ease;
+
+  --font: '', -apple-system, BlinkMacSystemFont, 'system-ui', 'Apple SD Gothic Neo', sans-serif;
+}

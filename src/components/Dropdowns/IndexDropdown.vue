@@ -1,13 +1,13 @@
 <template>
   <div>
     <button
-          class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none"
-          type="button"
+      class="cursor-pointer text-xl leading-none px-3 py-1 block outline-none focus:outline-none"
+      type="button"
       ref="btnDropdownRef"
-          v-on:click="toggleDropdown($event)"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
+      v-on:click="toggleDropdown($event)"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
     <div
       ref="popoverDropdownRef"
       class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
@@ -16,9 +16,7 @@
         block: dropdownPopoverShow,
       }"
     >
-      <span
-        class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
-      >
+      <span class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400">
         Admin Layout
       </span>
       <router-link
@@ -40,15 +38,13 @@
         Tables
       </router-link>
       <router-link
-        to="/admin/maps"
+        to="/admin/chat-dashboard"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       >
-        Maps
+        Chat Dashboard
       </router-link>
       <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
-      <span
-        class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
-      >
+      <span class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400">
         Auth Layout
       </span>
       <router-link
@@ -64,9 +60,7 @@
         Register
       </router-link>
       <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
-      <span
-        class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
-      >
+      <span class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400">
         No Layout
       </span>
       <router-link
@@ -85,7 +79,7 @@
   </div>
 </template>
 <script>
-import { createPopper } from "@popperjs/core";
+import { createPopper } from '@popperjs/core';
 
 export default {
   data() {
@@ -101,7 +95,7 @@ export default {
       } else {
         this.dropdownPopoverShow = true;
         createPopper(this.$refs.btnDropdownRef, this.$refs.popoverDropdownRef, {
-          placement: "bottom-start",
+          placement: 'bottom-start',
         });
       }
     },
