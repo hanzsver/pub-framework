@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <main>
     <index-navbar />
-    <section class="header relative pt-16 items-center flex h-screen max-h-860-px">
+    <section class="relative pt-16 items-center flex h-screen max-h-860-px">
       <div class="container mx-auto items-center flex flex-wrap">
         <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
           <div class="pt-32 sm:pt-0">
@@ -30,7 +30,7 @@
       </div>
     </section>
     <footer-component />
-  </div>
+  </main>
 </template>
 <script>
 import IndexNavbar from '@/components/Navbars/IndexNavbar.vue';

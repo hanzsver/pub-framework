@@ -1,13 +1,7 @@
 <template>
-  <nav
-    class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow"
-  >
-    <div
-      class="container px-4 mx-auto flex flex-wrap items-center justify-between"
-    >
-      <div
-        class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
-      >
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
         <router-link to="/">
           <a
             class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
@@ -17,22 +11,15 @@
           </a>
         </router-link>
       </div>
-      <div
-        class="lg:flex flex-grow items-center"
-        id="example-navbar-warning"
-      >
-        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
-          <li class="flex items-center">
-            <index-dropdown />
-          </li>
-        </ul>
+      <div class="header__menu">
+        <index-dropdown />
       </div>
     </div>
-  </nav>
+  </header>
 </template>
 
 <script>
-import IndexDropdown from "@/components/Dropdowns/IndexDropdown.vue";
+import IndexDropdown from '@/components/Dropdowns/IndexDropdown.vue';
 
 export default {
   data() {

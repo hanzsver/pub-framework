@@ -1,3 +1,10 @@
-@import 'base/_reset';
-@import './_variables.scss';
-@import 'mixins/_index';
+@import 'base/reset';
+
+@import 'components/buttons';
+
+@import 'helpers/variables';
+
+@import 'layout/header';
+@import 'layout/index';
+
+@import 'mixins/index';
