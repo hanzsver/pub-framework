@@ -8,8 +8,8 @@ UI 가이드라인과 샘플을 포함하며 모든 서비스 개발에서의 �
 * CRUD
 * UI Components 
 
-## Conentions
-* [링크](https://github.com/hanzsver/pub-framework/wiki/Convention)
+## Conventions
+* [01. Git Convention](https://github.com/hanzsver/pub-framework/wiki/Convention)
 
 ## Contributer
 <table>
