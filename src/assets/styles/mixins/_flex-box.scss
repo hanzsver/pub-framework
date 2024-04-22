@@ -1,9 +1,9 @@
 $align-map: (
-  "start": flex-start,
-  "end": flex-end,
-  "center": center,
-  "between": space-between,
-  "around": space-around,
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'between': space-between,
+  'around': space-around,
 );
 
 @function align-base($value) {
@@ -31,20 +31,11 @@ $align-map: (
     }
 
     // ====== justify-content ====== //
-    @each $justifyContent
-      in justify-start
-      justify-center
-      justify-end
-      justify-between
-      justify-around
-    {
+    @each $justifyContent in justify-start justify-center justify-end justify-between justify-around {
       $justifyContent-index: index($args, $justifyContent);
 
       @if $justifyContent-index {
-        $justifyContent-value: str-replace(
-          nth($args, $justifyContent-index),
-          "justify-"
-        );
+        $justifyContent-value: str-replace(nth($args, $justifyContent-index), 'justify-');
         justify-content: align-base($justifyContent-value);
       }
     }
@@ -54,8 +45,17 @@ $align-map: (
       $alignItems-index: index($args, $alignItems);
 
       @if $alignItems-index {
-        $alignItems-value: str-replace(nth($args, $alignItems-index), "items-");
+        $alignItems-value: str-replace(nth($args, $alignItems-index), 'items-');
         align-items: align-base($alignItems-value);
+      }
+    }
+
+    // ====== flex-grow ====== //
+    @each $flexGrow in 0 1 {
+      $flexGrow-index: index($args, $flexGrow);
+
+      @if $flexGrow-index {
+        flex: nth($args, $flexGrow-index) nth($args, $flexGrow-index) 0%;
       }
     }
   }
