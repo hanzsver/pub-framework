@@ -1,1 +1,182 @@
-// buttons styles
+/* ========================== Variables ========================== */
+$button-size: (xs, sm, md, lg, xl);
+
+$button-height: (
+  xs: var(--form-height-xs),
+  sm: var(--form-height-sm),
+  md: var(--form-height-md),
+  lg: var(--form-height-lg),
+  xl: var(--form-height-xl),
+);
+
+$button-colors: (
+  primary: (
+    default: var(--color-primary-2),
+    hover: var(--color-primary-1),
+  ),
+  secondary: (
+    default: var(--color-secondary-2),
+    hover: var(--color-secondary-1),
+  ),
+  dark: (
+    default: var(--color-gray-70),
+    hover: var(--color-gray-80),
+  ),
+  light: (
+    default: var(--color-gray-40),
+    hover: var(--color-gray-50),
+  ),
+);
+
+/* ========================== Mixins ========================== */
+@mixin btn($type: 'full', $color: 'primary') {
+  @include flex-box(justify-center items-center);
+  @include btn-color($type: $type, $color: $color);
+  @include typo(var(--font-size-15), 500);
+
+  flex: 0 0 auto;
+  width: max-content;
+  border-radius: var(--form-radius);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  & + button {
+    margin-left: 10px;
+  }
+}
+
+@mixin btn-color($type, $color) {
+  $color-map: map-get($button-colors, $color);
+  border: 1px solid map-get($color-map, default);
+
+  @if $type == 'full' {
+    background-color: map-get($color-map, default);
+    color: var(--color-white);
+
+    &:hover:not(:disabled) {
+      border-color: map-get($color-map, default);
+      background-color: map-get($color-map, hover);
+    }
+  } @else if $type == 'line' {
+    background-color: var(--color-white);
+    color: map-get($color-map, default);
+
+    &:hover:not(:disabled) {
+      border-color: map-get($color-map, hover);
+      color: map-get($color-map, hover);
+    }
+  }
+}
+
+@mixin btn-size($size: 'md') {
+  @if $size == 'xs' {
+    min-width: 65px;
+    height: map-get($button-height, $size);
+    padding: 0 8px;
+  } @else if $size == 'sm' {
+    min-width: 65px;
+    height: map-get($button-height, $size);
+    padding: 0 10px;
+  } @else if $size == 'md' {
+    min-width: 65px;
+    height: map-get($button-height, $size);
+    padding: 0 10px;
+  } @else if $size == 'lg' {
+    min-width: 70px;
+    height: map-get($button-height, $size);
+    padding: 0 15px;
+  } @else if $size == 'xl' {
+    @apply flex-1;
+    min-width: 70px;
+    width: 100%;
+    height: map-get($button-height, $size);
+    padding: 0 15px;
+    font-size: 16px; // 예외 사용
+  }
+
+  // 아이콘 버튼인 경우
+  &:has(.hide) {
+    padding: 0;
+    @if $size == 'sm' {
+      min-width: var(--form-height-sm);
+      max-width: var(--form-height-sm);
+    } @else if $size == 'md' {
+      min-width: var(--form-height-md);
+      max-width: var(--form-height-md);
+    } @else if $size == 'lg' {
+      min-width: var(--form-height-lg);
+      max-width: var(--form-height-lg);
+    } @else if $size == 'xl' {
+      min-width: var(--form-height-xl);
+      max-width: var(--form-height-xl);
+    }
+  }
+}
+
+/* ========================== Styles ========================== */
+.btn {
+  &__full {
+    &--primary {
+      @each $size in $button-size {
+        &-#{$size} {
+          @include btn;
+          @include btn-size($size);
+        }
+      }
+    }
+
+    &--secondary {
+      @each $size in $button-size {
+        &-#{$size} {
+          @include btn($color: 'secondary');
+          @include btn-size($size);
+        }
+      }
+    }
+
+    &--dark {
+      @each $size in $button-size {
+        &-#{$size} {
+          @include btn($color: 'dark');
+          @include btn-size($size);
+        }
+      }
+    }
+
+    &--light {
+      @each $size in $button-size {
+        &-#{$size} {
+          @include btn($color: 'light');
+          @include btn-size($size);
+          color: var(--color-critical-2);
+        }
+      }
+    }
+  }
+
+  &__line {
+    &--primary {
+      @each $size in $button-size {
+        &-#{$size} {
+          @include btn('line');
+          @include btn-size($size);
+        }
+      }
+    }
+
+    &--secondary {
+      @each $size in $button-size {
+        &-#{$size} {
+          @include btn('line', 'secondary');
+          @include btn-size($size);
+        }
+      }
+    }
+  }
+}
