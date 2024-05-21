@@ -297,6 +297,25 @@
             </a>
           </li>
         </ul>
+
+        <!-- Divider -->
+        <hr class="my-4 md:min-w-full" />
+        <!-- Heading -->
+        <h6 class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
+          Components
+        </h6>
+        <!-- Navigation -->
+        <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+          <li class="inline-flex">
+            <router-link
+              class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+              to="/example/buttons"
+            >
+              <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
+              Buttons
+            </router-link>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
