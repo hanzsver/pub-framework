@@ -9,10 +9,38 @@ $button-height: (
   xl: var(--form-height-xl),
 );
 
+$button-style: (
+  xs: (
+    min-width: 65px,
+    height: var(--form-height-xs),
+    padding: 0 15px,
+  ),
+  sm: (
+    min-width: 65px,
+    height: var(--form-height-sm),
+    padding: 0 15px,
+  ),
+  md: (
+    min-width: 65px,
+    height: var(--form-height-md),
+    padding: 0 15px,
+  ),
+  lg: (
+    min-width: 70px,
+    height: var(--form-height-lg),
+    padding: 0 20px,
+  ),
+  xl: (
+    min-width: 70px,
+    height: var(--form-height-xl),
+    padding: 0 20px,
+  ),
+);
+
 $button-colors: (
   primary: (
-    default: var(--color-primary-2),
-    hover: var(--color-primary-1),
+    default: var(--color-primary-800),
+    hover: var(--color-primary-900),
   ),
   secondary: (
     default: var(--color-secondary-2),
