@@ -1,10 +1,9 @@
 @import 'base/reset';
 
 @import 'helpers/variables';
-
-@import 'mixins/index';
+@import 'helpers/mixins/index';
 
 @import 'layout/header';
-@import 'layout/index';
+@import 'layout/wrapper';
 
 @import 'components/buttons';

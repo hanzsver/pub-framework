@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <main class="layout chat">
     <sidebar :class="{ 'is-open': isNavOpen }" />
-    <div class="content relative bg-blueGray-100">
-      <admin-navbar />
+    <div class="content">
       <router-view />
     </div>
     <button
@@ -13,15 +12,13 @@
     >
       <i class="fas fa-bars"></i>
     </button>
-  </div>
+  </main>
 </template>
 <script>
-import AdminNavbar from '@/components/Navbars/AdminNavbar.vue';
 import Sidebar from '@/components/Sidebar/Sidebar.vue';
 export default {
-  name: 'admin-layout',
+  name: 'chat-layout',
   components: {
-    AdminNavbar,
     Sidebar,
   },
   data() {
@@ -54,6 +51,7 @@ nav {
 }
 
 .content {
+  height: 100%;
   margin-left: 0;
   transition: margin 0.5s ease;
 }

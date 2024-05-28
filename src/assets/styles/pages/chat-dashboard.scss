@@ -1,0 +1,30 @@
+.chat-dashboard {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  &__side {
+    width: 260px;
+    background-color: red;
+    overflow-x: hidden;
+    flex-shrink: 0;
+
+    &-wrap {
+        
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    height: 100%;
+    max-width: 100%;
+    flex: 1 1 0%;
+    flex-direction: column;
+    overflow: hidden;
+  }
+}

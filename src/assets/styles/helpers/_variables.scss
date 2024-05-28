@@ -24,6 +24,7 @@ $media-query-map: (
   tablet: 768px,
   desktop: 1280px,
 );
+
 :root {
   @each $key, $value in $media-query-map {
     --breakpoint-#{$key}: #{$value};
@@ -81,9 +82,18 @@ $media-query-map: (
   --radius--md: 10px;
   --radius--sm: 8px;
   --radius--xs: 4px;
-}
 
-/* etc */
-:root {
+  /* etc */
   --transition: all 150ms ease;
+
+  --font: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue',
+    'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', sans-serif;
+
+  /* Theme Toggle */
+  --theme-toggle-light-ico-color: #ffffff;
+  --theme-toggle-light-bg-color: #fa9d73;
+  --theme-toggle-dark-ico-color: #ffffff;
+  --theme-toggle-dark-bg-color: #435271;
+  --theme-toggle-control-bg-color: #ffffff;
 }
