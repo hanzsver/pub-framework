@@ -5,11 +5,10 @@ html {
 }
 
 body {
+  @include typo($line-height: 1.5, $font-family: var(--font));
   overflow-x: hidden;
   overflow-y: overlay;
   overflow-wrap: break-word;
-  font-size: 1rem;
-  font-family: var(--font);
   -webkit-font-smoothing: antialiased;
   word-break: keep-all;
   box-sizing: border-box;
@@ -23,8 +22,37 @@ body {
 #app {
   min-height: 100%;
 }
+.layout {
+  @include flex-box(row);
+}
+.content {
+  @include flex-box(column);
+  width: 100%;
+  min-height: 700px;
+  padding: var(--layout-padding);
+  background-color: var(--color-gray-0);
+  > div {
+    height: 100%;
+  }
+}
+.dark {
+  .content {
+    background-color: var(--color-gray-10);
+  }
+}
 
-main {
-  width: 100vw;
-  height: 100vh;
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-gray-40);
+  border-radius: var(--radius-xs);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary-800);
+  border-radius: var(--radius-xs);
 }

@@ -43,16 +43,12 @@ $button-colors: (
     hover: var(--color-primary-900),
   ),
   secondary: (
-    default: var(--color-secondary-2),
-    hover: var(--color-secondary-1),
+    default: var(--color-secondary-800),
+    hover: var(--color-secondary-900),
   ),
-  dark: (
-    default: var(--color-gray-70),
-    hover: var(--color-gray-80),
-  ),
-  light: (
-    default: var(--color-gray-40),
-    hover: var(--color-gray-50),
+  negative: (
+    default: var(--color-gray-60),
+    hover: var(--color-gray-70),
   ),
 );
 
@@ -60,11 +56,10 @@ $button-colors: (
 @mixin btn($type: 'full', $color: 'primary') {
   @include flex-box(justify-center items-center);
   @include btn-color($type: $type, $color: $color);
-  @include typo(var(--font-size-15), 500);
 
   flex: 0 0 auto;
   width: max-content;
-  border-radius: var(--form-radius);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   white-space: nowrap;
   transition: var(--transition);
@@ -84,16 +79,16 @@ $button-colors: (
   border: 1px solid map-get($color-map, default);
 
   @if $type == 'full' {
+    @include typo(var(--font-size-15), 500, var(--color-gray-0));
     background-color: map-get($color-map, default);
-    color: var(--color-white);
 
     &:hover:not(:disabled) {
       border-color: map-get($color-map, default);
       background-color: map-get($color-map, hover);
     }
   } @else if $type == 'line' {
-    background-color: var(--color-white);
-    color: map-get($color-map, default);
+    @include typo(var(--font-size-15), 500, map-get($color-map, default));
+    background-color: var(--color-gray-0);
 
     &:hover:not(:disabled) {
       border-color: map-get($color-map, hover);
@@ -168,21 +163,11 @@ $button-colors: (
       }
     }
 
-    &--dark {
+    &--negative {
       @each $size in $button-size {
         &-#{$size} {
-          @include btn($color: 'dark');
+          @include btn($color: 'negative');
           @include btn-size($size);
-        }
-      }
-    }
-
-    &--light {
-      @each $size in $button-size {
-        &-#{$size} {
-          @include btn($color: 'light');
-          @include btn-size($size);
-          color: var(--color-critical-2);
         }
       }
     }
@@ -202,6 +187,15 @@ $button-colors: (
       @each $size in $button-size {
         &-#{$size} {
           @include btn('line', 'secondary');
+          @include btn-size($size);
+        }
+      }
+    }
+
+    &--negative {
+      @each $size in $button-size {
+        &-#{$size} {
+          @include btn('line', 'negative');
           @include btn-size($size);
         }
       }

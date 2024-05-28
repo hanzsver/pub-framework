@@ -1,14 +1,10 @@
 <template>
   <header class="header">
     <div class="header__inner">
-      <div class="header__logo">
+      <div class="flex items-center">
+        <div class="header__logo"></div>
         <router-link to="/">
-          <a
-            class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
-            href="#pablo"
-          >
-            Pub Framework
-          </a>
+          <a class="header__title" href="#pablo"> Pub Framework </a>
         </router-link>
       </div>
       <div class="header__menu">

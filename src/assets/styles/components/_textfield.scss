@@ -1,0 +1,88 @@
+/* ========================== Variables ========================== */
+$textfield-size: (xs, sm, md, lg, xl);
+
+$textfield-colors: (
+  text: (
+    default: var(--color-gray-70),
+    placeholder: var(--color-gray-60),
+    disabled: var(--color-gray-60),
+    readonly: var(--color-gray-60),
+  ),
+  background: (
+    default: var(--color-gray-0),
+    disabled: var(--color-gray-5),
+    readonly: var(--color-gray-5),
+  ),
+  border: (
+    default: var(--color-gray-40),
+    disabled: var(--color-gray-40),
+    readonly: var(--color-gray-40),
+    focus: var(--color-gray-80),
+  ),
+  validate: var(--color-red-900),
+);
+$textfield-padding: (
+  input: 15px,
+  textarea: 15px,
+);
+$textarea-resizeable: false;
+
+$text-color: map-get($textfield-colors, text);
+$bg-color: map-get($textfield-colors, background);
+$bd-color: map-get($textfield-colors, border);
+
+/* ========================== Mixins ========================== */
+@mixin textarea-resize($resize: $textarea-resizeable) {
+  @if $resize == false {
+    resize: none;
+  } @else {
+    resize: vertical;
+    &::webkit-resizer {
+      // 여기에서 resizer 아이콘 변경 가능
+      transform: var(--transition);
+    }
+    &:disabled,
+    &[readonly] {
+      &::webkit-resizer {
+        // 여기에서 resizer 아이콘 변경 가능
+      }
+    }
+    &.is-error {
+      &::webkit-resizer {
+        // 여기에서 resizer 아이콘 변경 가능
+      }
+    }
+  }
+}
+
+@mixin textfield-base($type) {
+  @include flex-box(column justify-center items-start);
+  width: 100%;
+  .cm-#{type}__input {
+    position: relative;
+    width: 100%;
+  }
+  input,
+  textarea {
+    @include typo(var(--font-size-14), 400, map-get($text-color, default));
+    @include truncate;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    @if $type == input {
+      padding: 0 map-get($textfield-padding, input)
+    } @else {
+      padding: 0 map-get($textfield-padding, textarea)
+    }
+    border: 1px solid map-get($bd-color, default);
+    border-radius: var(--radius-sm);
+    background-color: map-get($bg-color, default);
+    transition: var(--transition);
+    &::placeholder {
+      color: map-get($text-color, placeholder);
+    }
+  }
+}
+
+/* ========================== Styles ========================== */

@@ -1,31 +1,27 @@
 <template>
-  <main>
+  <main class='landing'>
     <index-navbar />
-    <section class="relative pt-16 items-center flex h-screen max-h-860-px">
-      <div class="container mx-auto items-center flex flex-wrap">
-        <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
-          <div class="pt-32 sm:pt-0">
-            <h2 class="font-semibold text-4xl text-blueGray-600">Pub Framework</h2>
-            <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-              Pub Framework는 빠른 웹서비스 구축을 위한 시작의 기반입니다. UI 가이드라인과 샘플을 포함하며 모든 서비스
-              개발에서의 일관된 코드 작성을 도와줍니다.
-            </p>
-            <div class="mt-12">
-              <router-link
-                to="/admin/dashboard"
-                class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-emerald-500 active:bg-emerald-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-              >
-                Get started
-              </router-link>
-              <a
-                href="https://github.com/hanzsver/pub-framework"
-                class="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-                target="_blank"
-              >
-                Github
-              </a>
-            </div>
-          </div>
+    <section>
+      <div class="pt-32 sm:pt-0">
+        <h2 class="font-semibold text-4xl text-blueGray-600">Pub Framework</h2>
+        <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
+          Pub Framework는 빠른 웹서비스 구축을 위한 시작의 기반입니다. UI 가이드라인과 샘플을 포함하며 모든 서비스
+          개발에서의 일관된 코드 작성을 도와줍니다.
+        </p>
+        <div class="landing__btn-area">
+          <router-link
+            to="/admin/dashboard"
+            class="btn__full--primary-lg"
+          >
+            Get started
+          </router-link>
+          <a
+            href="https://github.com/hanzsver/pub-framework"
+            target="_blank"
+            class="btn__line--primary-lg"
+          >
+            Github
+          </a>
         </div>
       </div>
     </section>

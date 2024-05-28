@@ -1,12 +1,10 @@
 <template>
-  <div class="relative">
+  <div class="layout">
     <sidebar :class="{ 'is-open': isNavOpen }" />
-    <div class="content relative bg-blueGray-100">
-      <admin-navbar />
-      <div class="relative p-4">
-        <router-view />
-      </div>
-    </div>
+    <admin-navbar />
+    <main class="content">
+      <router-view />
+    </main>
   </div>
 </template>
 <script>

@@ -1,0 +1,26 @@
+.landing {
+  @include flex-box(column 1);
+  height: 100vh;
+  padding: var(--layout-header-height) 0 0;
+  background-color: var(--color-gray-0);
+  box-sizing: border-box;
+
+  section {
+    @include flex-box(column items-center justify-center);
+    height: -webkit-fill-available;
+    padding: 20px 40px;
+  }
+  &__btn-area {
+    @include flex-box(items-center);
+    @include gap-margin(10px);
+    width: 100%;
+    margin-top: 40px;
+
+    @include tablet {
+      @include flex-box(wrap items-center);
+      a {
+        width: 100%;
+      }
+    }
+  }
+}
