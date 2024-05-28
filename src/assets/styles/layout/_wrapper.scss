@@ -1,0 +1,30 @@
+html {
+  overflow: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: overlay;
+  overflow-wrap: break-word;
+  font-size: 1rem;
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  min-height: 100%;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
