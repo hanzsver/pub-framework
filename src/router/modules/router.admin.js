@@ -1,4 +1,4 @@
-import Admin from '@/layouts/Admin.vue';
+import Default from '@/layouts/Default.vue';
 
 // views for Admin layout
 import Dashboard from '@/views/admin/Dashboard.vue';
@@ -9,7 +9,7 @@ import ChatDashboard from '@/views/admin/ChatDashboard.vue';
 const adminRoute = {
   path: '/admin',
   redirect: '/admin/dashboard',
-  component: Admin,
+  component: Default,
   children: [
     {
       path: '/admin/dashboard',

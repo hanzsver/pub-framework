@@ -1,11 +1,6 @@
 <template>
   <div>
-    <button
-      class="cursor-pointer text-xl leading-none px-3 py-1 block outline-none focus:outline-none"
-      type="button"
-      ref="btnDropdownRef"
-      v-on:click="toggleDropdown($event)"
-    >
+    <button class="w-10 h-10 cursor-pointer" type="button" ref="btnDropdownRef" v-on:click="toggleDropdown($event)">
       <i class="fas fa-bars"></i>
     </button>
     <div

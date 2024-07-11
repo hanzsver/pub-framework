@@ -1,0 +1,48 @@
+.sidebar {
+  @include flex-box(column);
+  overflow-y: auto;
+  width: var(--layout-sidebar-width);
+  padding: 30px 15px;
+  background-color: var(--color-gray-20);
+  &__header {
+    @include flex-box(justify-between);
+  }
+  &__title {
+    @include typo(var(--font-size-24), 500);
+  }
+  &__menu {
+    @include flex-box(column);
+  }
+  &__collapse {
+    .collapse {
+      &__title {
+        @include typo(var(--font-size-12), 700);
+        padding: 5px 0;
+        cursor: pointer;
+      }
+      &__content {
+        @include flex-box(column);
+        li {
+          @include flex-box(items-center);
+          @include space-y(10px);
+          padding: 5px 10px;
+          border-radius: var(--radius-sm);
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--color-gray-30);
+          }
+          a {
+            @include typo(var(--font-size-14));
+          }
+          .router-link-active {
+            @include typo(var(--font-size-14), 500, var(--color-primary-800));
+            a {
+              @include typo(var(--font-size-14), 500, var(--color-primary-800));
+            }
+          }
+        }
+      }
+    }
+  }
+}

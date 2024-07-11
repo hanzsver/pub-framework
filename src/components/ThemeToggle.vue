@@ -41,8 +41,8 @@ const toggleDark = () => {
 .theme-toggle {
   // ======== 임시 스타일 ========
   position: absolute;
-  top: 0;
-  left: 60px;
+  bottom: 10px;
+  right: 10px;
   z-index: 9999;
   // ======== // 임시 스타일 ========
   &__input {
