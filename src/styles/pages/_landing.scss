@@ -1,0 +1,18 @@
+.landing {
+  @include flex-box(column items-center justify-center);
+  height: -webkit-fill-available;
+
+  &__btn-area {
+    @include flex-box(items-center);
+    @include gap-margin(10px);
+    width: 100%;
+    margin-top: 40px;
+
+    @include tablet {
+      @include flex-box(wrap items-center);
+      a {
+        width: 100%;
+      }
+    }
+  }
+}

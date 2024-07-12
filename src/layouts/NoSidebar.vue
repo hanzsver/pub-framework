@@ -3,7 +3,6 @@
   <section class="layout">
     <Header />
     <main>
-      <Sidebar />
       <div class="layout__content">
         <router-view />
       </div>
