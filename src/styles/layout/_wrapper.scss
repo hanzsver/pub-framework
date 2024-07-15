@@ -1,0 +1,66 @@
+html {
+  overflow: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @include typo($line-height: 1.5, $font-family: var(--font));
+  overflow-x: hidden;
+  overflow-y: overlay;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+@mixin layout-base() {
+  @include flex-box(column);
+  overflow-y: hidden;
+  height: 100%;
+  main {
+    @include flex-box(row);
+    height: 100%;
+    padding-top: var(--layout-header-height);
+  }
+  &__content {
+    @include flex-box(column);
+    overflow-y: auto;
+    width: 100%;
+    min-height: 700px;
+    padding: var(--layout-padding);
+    background-color: var(--color-gray-0);
+  }
+}
+.layout {
+  @include layout-base();
+  &--sidebar-hide {
+    @include layout-base();
+  }
+}
+.dark {
+  .content {
+    background-color: var(--color-gray-10);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-gray-40);
+  border-radius: var(--radius-xs);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary-800);
+  border-radius: var(--radius-xs);
+}

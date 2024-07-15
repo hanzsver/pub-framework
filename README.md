@@ -1,17 +1,21 @@
 # Pub Framework
+
 Pub Framework는 빠른 웹서비스 구축을 위한 시작의 기반입니다.<br/>
 UI 가이드라인과 샘플을 포함하며 모든 서비스 개발에서의 일관된 코드 작성을 도와줍니다.
 
 ## Components
-* Layout
-* MGMT
-* CRUD
-* UI Components 
+
+- Layout
+- MGMT
+- CRUD
+- UI Components
 
 ## Conventions
-* [01. Git Convention](https://github.com/hanzsver/pub-framework/wiki/Convention)
+
+- [01. Git Convention](https://github.com/hanzsver/pub-framework/wiki/Convention)
 
 ## Contributer
+
 <table>
 	<tr>
 		<td align="center">
@@ -46,8 +50,12 @@ UI 가이드라인과 샘플을 포함하며 모든 서비스 개발에서의 �
 </table>
 
 ## Setup
+
 ```
-npm install
-npm run serve
+pnpm install
+pnpm dev
 ```
 
+## Update
+
+- (07.15) vite, ts 기반 프레임워크로 변경(준영)

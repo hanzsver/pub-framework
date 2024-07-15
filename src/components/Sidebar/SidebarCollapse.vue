@@ -2,11 +2,11 @@
   <div>
     <hr class="my-4 md:min-w-full" />
 
-    <details class="sidebar__collapse" open>
+    <details class="sidebar__collapse" @toggle="toggleDetails" open>
       <summary>
         <h6 class="collapse__title">{{ headerTitle }}</h6>
       </summary>
-      <ul class="collapse__content">
+      <ul ref="content" class="collapse__content">
         <slot />
       </ul>
     </details>
@@ -23,7 +23,16 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    toggleDetails(event) {
+      const content = this.$refs.content;
+      if (event.target.open) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = '0';
+      }
+    },
+  },
   components: {},
 };
 </script>

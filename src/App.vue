@@ -1,17 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
-  <div>
-    <router-view />
-    <ThemeToggle />
-  </div>
+  <RouterView />
 </template>
-
-<script>
-import ThemeToggle from './components/ThemeToggle.vue';
-
-export default {
-  name: 'App',
-  components: {
-    ThemeToggle,
-  },
-};
-</script>

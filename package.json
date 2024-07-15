@@ -1,70 +1,29 @@
 {
-  "name": "vue-notus",
-  "version": "1.1.0",
-  "description": "Vue Notus - A free Tailwind CSS and VueJS UI Kit and Admin by Creative Tim.",
+  "name": "pub-framework",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && gulp licenses",
-    "lint": "vue-cli-service lint",
-    "build:tailwind": "tailwind build src/assets/styles/main.scss -o src/assets/styles/tailwind.css",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run serve"
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.15.3",
-    "@popperjs/core": "2.9.1",
-    "@tailwindcss/forms": "0.2.1",
-    "@vue/compiler-sfc": "^3.4.27",
-    "@vueuse/core": "^10.9.0",
-    "chart.js": "2.9.4",
-    "core-js": "3.9.1",
-    "gulp": "4.0.2",
-    "gulp-append-prepend": "1.0.8",
-    "vue": "^3.4.27",
-    "vue-demi": "^0.14.7",
-    "vue-router": "4.0.5"
+    "sass": "^1.77.8",
+    "sass-loader": "^14.2.1",
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
-    "@babel/core": "7.13.10",
-    "@babel/eslint-parser": "7.13.10",
-    "@vue/cli-plugin-babel": "5.0.0-alpha.7",
-    "@vue/cli-plugin-eslint": "5.0.0-alpha.7",
-    "@vue/cli-service": "5.0.0-alpha.7",
+    "@vitejs/plugin-vue": "^5.0.5",
     "autoprefixer": "^10.4.19",
-    "eslint": "7.22.0",
-    "eslint-plugin-vue": "7.7.0",
-    "postcss": "^8.4.38",
-    "sass": "^1.75.0",
-    "sass-loader": "^14.2.1",
-    "tailwindcss": "^3.4.3",
-    "vue-cli-plugin-tailwindcss": "~0.1.1",
-    "vue-template-compiler": "2.6.12",
-    "webpack": "^5.91.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {},
-      "tailwindcss": "./tailwind.config.js"
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
-  "homepage": "https://demos.creative-tim.com/vue-notus/",
-  "license": "MIT",
-  "repository": "https://github.com/creativetimofficial/vue-notus"
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.18.0",
+    "unplugin-vue-components": "^0.27.2",
+    "vite": "^5.3.1",
+    "vite-plugin-pages": "^0.32.3",
+    "vue-tsc": "^2.0.21"
+  }
 }
